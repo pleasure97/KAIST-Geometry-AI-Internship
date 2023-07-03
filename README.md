@@ -1,6 +1,7 @@
 # KAIST-Geometry-AI-Internship
 
 </br> 
+
 ⭐ This is a repository for recording things I learned during my internship. 
 
 </br>
