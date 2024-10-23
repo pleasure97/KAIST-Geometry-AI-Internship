@@ -57,80 +57,73 @@
 ```
 .
 ├── PointNet
-│   ├── checkpoints               <--- 
-│   ├── data                      <--- 
-│   ├── dataloaders               <--- 
-│   ├── utils                     <--- 
-│   ├── model.py                  <--- 
-│   ├── practice.py               <--- 
-│   ├── train_ae.py               <--- 
-│   ├── train_cls.py              <--- 
-│   └── train_seg.py              <--- 
+│   ├── checkpoints                      <--- Checkpoints for Point Cloud Models 
+│   ├── data                             <--- Store the dataset when learning ShapeNet 
+│   ├── dataloaders                      <--- Load the dataset when learning ShapeNet 
+│   ├── utils                            <--- Utils for Pre & Post Processing 
+│   ├── model.py                         <--- Codes for Related Neural Network Models 
+│   ├── practice.py                      <--- Briefly Check the performance of the model 
+│   ├── train_ae.py                      <--- Point Cloud Auto Encoding 
+│   ├── train_cls.py                     <--- Point Cloud Classification 
+│   └── train_seg.py                     <--- Point Cloud Segmentation 
 ├── NeRF
-│   ├── media                     <--- 
-│   ├── scripts                   <--- 
-│   ├── environment.yaml          <--- 
-│   ├── requirements.txt          <--- 
-│   └──  torch_nerf               <--- 
-│       ├── configs               <--- 
-│       ├── runners               <--- 
-│       └── src                   <--- 
-│              ├── cameras               <--- 
-│              ├── network               <--- 
-│              ├── renderer              <--- 
-│              ├── scene                 <--- 
-│              ├── signal_encoder        <--- 
-│              └── utils                 <--- 
+│   ├── media                            <--- Store the NeRF's rendering output 
+│   ├── scripts                          <--- Script files for downloading the dataset and creating videos
+│   ├── environment.yaml                  
+│   ├── requirements.txt                  
+│   └──  torch_nerf                     
+│       ├── configs                      <--- Configurations for Inital Settings such as CUDA, NNs, and Renderer
+│       ├── runners                      <--- Codes for Training, Evaluating, and Rendering 
+│       └── src                          
+│              ├── cameras               <--- Codes for Camera Class and RaySampling Class 
+│              ├── network               <--- Code for NeRF base class
+│              ├── renderer              <--- Codes for Volumetric Rendering 
+│              ├── scene                 <--- Codes for creating the simple primitive mesh 
+│              ├── signal_encoder        <--- Codes for NeRF's positional encoding 
+│              └── utils                 <--- Codes for Loading datasets and Evaluation Metrics 
 ├── Diffusion
-│   ├── image_diffusion           <--- 
-│       ├── dataset.py            <--- 
-│       ├── ddpm.py               <--- 
-│       ├── module.py             <--- 
-│       ├── network.py            <--- 
-│       ├── sampling.py           <--- 
-│       ├── scheduler.py          <--- 
-│       ├── train.py              <--- 
-│       └── fid                   <--- 
+│   ├── image_diffusion                  
+│       ├── dataset.py                   <--- Codes for loading and processing AFHQ dataset 
+│       ├── ddpm.py                      <--- Codes for DDPM(Denoising Diffusion Probablistic Models)
+│       ├── module.py                    <--- Codes for Basic Network Modules such as UpSampling, ResBlock... 
+│       ├── network.py                   <--- Code for UNet 
+│       ├── sampling.py                  <--- Codes for creating the sample with the learned model 
+│       ├── scheduler.py                 <--- Codes for learning rate scheduler 
+│       ├── train.py                     <--- Codes for training a DDPM or DDIM based model
+│       └── fid                          <--- Codes for an evaluation metric called Frechet Inception Distance
 │   └── SDE
-│       ├── dataset.py            <--- 
-│       ├── eval.py               <--- 
-│       ├── loss.py               <--- 
-│       ├── network.py            <--- 
-│       ├── sampling.py           <--- 
-│       ├── sde.py                <--- 
-│       └── train.py              <--- 
+│       ├── dataset.py                   <--- Codes for extracting samples according to the type of the dataset 
+│       ├── eval.py                      <--- Codes for calculating the similarity of point clouds 
+│       ├── loss.py                      <--- Codes for losses such as Schrodinger Bridge Loss
+│       ├── network.py                   <--- Codes for positional encoding, MLP, and Simple Network 
+│       ├── sampling.py                  <--- Codes for Sampler 
+│       ├── sde.py                       <--- Codes for Variance Preserving SDE, Variance Exploding SDE 
+│       └── train.py                     <--- Codes for showing the training results in matplotlib  
 └── Assets
 ```
 
-## PointNet
+---
 
+**## PointNet**
 
-## NeRF
+---
 
+**## NeRF**
 
-## NeRF-Studio
+---
 
-## Diffusion Model 
+**## NeRF-Studio**
 
-## Stable Diffusion 
+---
 
-## Research Project 
+**## Diffusion Model**
 
+---
 
+**## Stable Diffusion**
 
-## Resources
-- [[paper](https://arxiv.org/abs/2011.13456)] Score-Based Generative Modeling through Stochastic Differential Equations
-- [[paper](https://arxiv.org/abs/2006.09011)] Improved Techniques for Training Score-Based Generative Models
-- [[paper](https://arxiv.org/abs/2006.11239)] Denoising Diffusion Probabilistic Models
-- [[paper](https://arxiv.org/abs/2105.05233)] Diffusion Models Beat GANs on Image Synthesis
-- [[paper](https://arxiv.org/abs/2207.12598)] Classifier-Free Diffusion Guidance
-- [[paper](https://arxiv.org/abs/2010.02502)] Denoising Diffusion Implicit Models
-- [[paper](https://arxiv.org/abs/2206.00364)] Elucidating the Design Space of Diffusion-Based Generative Models
-- [[paper](https://arxiv.org/abs/2106.02808)] A Variational Perspective on Diffusion-Based Generative Models and Score Matching
-- [[paper](https://arxiv.org/abs/2305.16261)] Trans-Dimensional Generative Modeling via Jump Diffusion Models
-- [[paper](https://openreview.net/pdf?id=nioAdKCEdXB)] Likelihood Training of Schrödinger Bridge using Forward-Backward SDEs Theory
-- [[blog](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/)] What is Diffusion Model?
-- [[blog](https://yang-song.net/blog/2021/score/)] Generative Modeling by Estimating Gradients of the Data Distribution
-- [[lecture](https://youtube.com/playlist?list=PLCf12vHS8ONRpLNVGYBa_UbqWB_SeLsY2)] Charlie's Playlist on Diffusion Processes
-- [[slide](./assets/summary_of_DDPM_and_DDIM.pdf)] Juil's presentation slide of DDIM
-- [[slide](./assets/sb_likelihood_training.pdf)] Charlie's presentation of Schrödinger Bridge.
+---
+
+**## Research Project**
+
+---
